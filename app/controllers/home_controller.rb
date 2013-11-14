@@ -37,6 +37,7 @@ class HomeController < ApplicationController
   ],
   "notification": {
     "level": "DEFAULT"
-  }~
+  }
+}~
   end
 end
