@@ -2,6 +2,7 @@ class AuthController < ApplicationController
   def callback
     refresh_token = request.env.fetch("omniauth.auth", {}).fetch("credentials", {}).fetch("refresh_token", nil)
     token = request.env.fetch("omniauth.auth", {}).fetch("credentials", {}).fetch("token", nil)
+    session[:auth_return] = request.env["omniauth.auth"]
     session[:refresh_token] = refresh_token
     session[:token] = token
     
