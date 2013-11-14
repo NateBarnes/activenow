@@ -1,6 +1,6 @@
 <% if session[:token].nil? %>
   <a href="/auth/google_oauth2">Login</a>
 <% else %>
-  <a href="/auth/google_oauth2">Welcome User!</a>
+  <a href="/auth/google_oauth2">Welcome <%= session[:token] %></a>
 <% end %>
 <h1>ActiveNow</h1>
