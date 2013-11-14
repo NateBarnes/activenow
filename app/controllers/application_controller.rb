@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def token
     puts "token"
-    @mirror_token ||= Mirror::Api::OAuth.new ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], session[:token]
+    @mirror_token ||= Mirror::Api::OAuth.new ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], session[:refresh_token]
   end
 
   def client
