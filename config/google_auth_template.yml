@@ -1,0 +1,8 @@
+# Copy this to config/google_auth.yml and fill in your values
+development:
+  key: YOUR_KEY
+  secret: YOUR_SECRET
+
+production:
+  key: YOUR_KEY
+  secret: YOUR_SECRET

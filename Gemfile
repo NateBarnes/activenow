@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 gem 'mirror-api'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
