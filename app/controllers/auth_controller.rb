@@ -4,7 +4,7 @@ class AuthController < ApplicationController
     token = request.env.fetch("omniauth.auth", {}).fetch("credentials", {}).fetch("token", nil)
     session[:token] = token
     
-    user = User.find_by_refresh_token refresh_token
+    user = User.find_by_glass_refresh_token refresh_token
 
     if user
     else
