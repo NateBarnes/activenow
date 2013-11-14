@@ -4,10 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def token
+    puts "token"
     @mirror_token ||= Mirror::Api::Oauth.new ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], session[:token]
   end
 
   def client
+    puts "client"
     @mirror_client ||= Mirror::Api::Client.new token
   end
 end
