@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def insert_event
-    client.timeline.insert File.open("app/views/home/del_mar.json", "rb").read
+    client.timeline.insert Event.example_event.to_json
     render :text => true
   end
 end
