@@ -3,6 +3,6 @@ GOOGLE_AUTH = (file_contents||Hash.new)[Rails.env] || {}
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, (GOOGLE_AUTH[:key] or ENV["GOOGLE_KEY"]), (GOOGLE_AUTH[:secret] or ENV["GOOGLE_SECRET"]), {
-    :scope => "glass.location, glass.timeline"
+    :scope => "userinfo.email, userinfo.profile, plus.me, glass.location, glass.timeline"
   }
 end
