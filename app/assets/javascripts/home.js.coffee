@@ -4,8 +4,10 @@
 
 window.fire_and_forget = (endpoint) ->
   $.ajax({
-    url: '/insert_event',
+    url: '/'+endpoint
     data: {
     },
-    dataType : 'json'
+    dataType : 'json',
+    success: () ->
+      $("#return_block").innerHtml("Blarg")
   })
