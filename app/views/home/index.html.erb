@@ -1,10 +1,2 @@
-<% if session[:token].nil? %>
-  <a href="/auth/google_oauth2">Login</a>
-<% else %>
-  <a href="/auth/google_oauth2">Welcome User</a>
-<% end %>
-<h1>ActiveNow</h1>
+<button class="btn btn-primary btn-large" onclick='fire_and_forget("insert_event")'>Insert Event</button>
 
-Refresh Token: <%= session[:refresh_token] %><br />
-Token: <%= session[:token] %><br />
-Auth Return: <%= session[:auth_return] %><br />
