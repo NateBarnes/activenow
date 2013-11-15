@@ -1,3 +1,4 @@
+Build <%= `git rev-parse HEAD` %>
 <% if session[:token].nil? %>
   <a href="/auth/google_oauth2">Login</a>
 <% else %>
