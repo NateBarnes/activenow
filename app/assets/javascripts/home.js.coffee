@@ -8,6 +8,6 @@ window.fire_and_forget = (endpoint) ->
     data: {
     },
     dataType : 'json',
-    success: () ->
-      $("#return_block").innerHtml("Blarg")
+    success: (data) ->
+      $("#return_block").html(data)
   })
