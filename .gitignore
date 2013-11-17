@@ -16,3 +16,4 @@
 /tmp
 .DS_Store
 config/google_auth.yml
+bin/heroku_setup.sh
