@@ -1,4 +1,6 @@
 class EventPresenter < Delegator
+  include TemplateHelper
+
   def self.find_local_event client
     location = client.locations.list.items.first
     find_event location.latitude, location.longitude
@@ -28,7 +30,7 @@ class EventPresenter < Delegator
       "text" => "Check out the #{assetName}! #{seo_url}",
       "html" => "<article>  <figure>    <img src=\"http://i.imgur.com/eoYDK9d.jpg\">  </figure>  <section> #{assetName} <br><br>#{formatted_date}<br></section></article>",
       "speakableType" => "Active Event",
-      "speakableText" => "#{description_by_type("summary")||description_by_type("standard")}",
+      "speakableText" => "#{strip_tags(description_by_type("summary")||description_by_type("standard"))}",
       "location" => {
         "kind" => "mirror#location",
         "latitude" => place.latitude,
