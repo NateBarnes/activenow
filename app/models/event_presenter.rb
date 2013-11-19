@@ -1,7 +1,11 @@
 class EventPresenter < Delegator
   def self.find_local_event client
     location = client.locations.list.items.first
-    results = ACTV.popular_events :lat_lon => "#{location.latitude},#{location.longitude}", :radius => 5, :start_date => "#{search_formatter(DateTime.now)}..#{search_formatter(1.year.from_now)}", :exclude_children => "true", :onlineRegistration => "true"
+    find_event location.latitude, location.longitude
+  end
+
+  def self.find_event lat, lon
+    results = ACTV.popular_events :lat_lon => "#{lat},#{lon}", :radius => 5, :start_date => "#{search_formatter(DateTime.now)}..#{search_formatter(1.year.from_now)}", :exclude_children => "true", :onlineRegistration => "true"
     new results.results.first
   end
 
