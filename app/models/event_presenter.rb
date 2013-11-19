@@ -10,10 +10,15 @@ class EventPresenter < Delegator
     @event = event
   end
 
+  def formatted_date str=self.start_date
+    dt = DateTime.parse str
+    dt.strftime "%A, %b %-d"
+  end
+
   def to_h
     {
       "text" => "Check out the #{assetName}! #{seo_url}",
-      "html" => "<article>  <figure>    <img src=\"http://i.imgur.com/eoYDK9d.jpg\">  </figure>  <section> #{assetName} <br><br><br>Saturday, Oct 5<br></section></article>",
+      "html" => "<article>  <figure>    <img src=\"http://i.imgur.com/eoYDK9d.jpg\">  </figure>  <section> #{assetName} <br><br>#{formatted_date}<br></section></article>",
       "speakableType" => "Active Event",
       "speakableText" => "#{description_by_type("summary")||description_by_type("standard")}",
       "location" => {
