@@ -54,7 +54,7 @@ class EventPresenter < Delegator
         },
         {
           "action" => "OPEN_URI",
-          "payload" => "http://www.active.com"
+          "payload" => seo_url
         },
         {
           "action" => "TOGGLE_PINNED"
