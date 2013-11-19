@@ -30,7 +30,7 @@ class EventPresenter < Delegator
       "text" => "Check out the #{assetName}! #{seo_url}",
       "html" => "<article>  <figure>    <img src=\"http://i.imgur.com/eoYDK9d.jpg\">  </figure>  <section> #{assetName} <br><br>#{formatted_date}<br></section></article>",
       "speakableType" => "Active Event",
-      "speakableText" => "#{strip_tags(description_by_type("summary")||description_by_type("standard"))}",
+      "speakableText" => "#{template.strip_tags(description_by_type("summary")||description_by_type("standard"))}",
       "location" => {
         "kind" => "mirror#location",
         "latitude" => place.latitude,
