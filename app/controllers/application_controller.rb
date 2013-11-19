@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def client
-    @mirror_client ||= Mirror::Api::Client.new token
+    @mirror_client ||= GlassClient.new token
   end
 end

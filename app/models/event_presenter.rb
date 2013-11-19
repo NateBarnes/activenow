@@ -2,7 +2,7 @@ class EventPresenter < Delegator
   include TemplateHelper
 
   def self.find_local_event client
-    location = client.locations.list.items.first
+    location = client.location
     find_event location.latitude, location.longitude
   end
 
