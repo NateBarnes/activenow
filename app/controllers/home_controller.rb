@@ -11,7 +11,13 @@ class HomeController < ApplicationController
   end
 
   def find_local_event
-    client.timeline.insert EventPresenter.find_local_event(client).to_h
+    if params[:lat] and params[:lon]
+      event = EventPresenter.find_event params[:lat], params[:lon]
+    else
+      event = EventPresenter.find_local_event client
+    end
+
+    client.timeline.insert event.to_h
     render :text => true
   end
 
