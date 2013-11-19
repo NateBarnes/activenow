@@ -18,8 +18,8 @@ class EventPresenter < Delegator
       "speakableText" => "#{description_by_type("summary")||description_by_type("standard")}",
       "location" => {
         "kind" => "mirror#location",
-        "latitude" => event.place.latitude,
-        "longitude" => event.place.longitude
+        "latitude" => place.latitude,
+        "longitude" => place.longitude
       },
       "menuItems" => [
         {
