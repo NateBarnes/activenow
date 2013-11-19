@@ -53,7 +53,8 @@ class EventPresenter < Delegator
           ]
         },
         {
-          "action" => "NAVIGATE"
+          "action" => "OPEN_URI",
+          "payload" => "http://www.active.com"
         },
         {
           "action" => "TOGGLE_PINNED"

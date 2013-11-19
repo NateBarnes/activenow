@@ -7,7 +7,17 @@ window.fire_and_forget = (endpoint) ->
     url: '/'+endpoint
     data: {
     },
-    dataType : 'json',
+    dataType: 'json',
+    complete: (data) ->
+      $("#return_block").html(data)
+  })
+
+window.get_local_event_with_geo = () ->
+  $.ajax({
+    url: "/find_local_event?lat="+$("#lat").val()+"&lon="+$("#lon").val()
+    data: {
+    },
+    dataType: 'json',
     complete: (data) ->
       $("#return_block").html(data)
   })

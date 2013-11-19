@@ -1,6 +1,12 @@
 <div class="span7">
   <button class="btn btn-primary btn-large" onclick='fire_and_forget("insert_event")'>Insert Event</button>
   <button class="btn btn-primary btn-large" onclick='fire_and_forget("find_local_event")'>Insert Local Event</button>
+  <br /><br />
+  <div style="margin-bottom:10px;">
+    <input id="lat" type="textbox" style="width:100px;" placeholder="latitude" />
+    <input id="lon" type="textbox" style="width:100px;" placeholder="longitude" />
+  </div>
+  <button class="btn btn-primary btn-large" onclick='get_local_event_with_geo()'>Get Local Event Here</button>
 </div>
 <div class="span5">
   <div class="hero-unit" id="return_block">
