@@ -11,7 +11,8 @@ class HomeController < ApplicationController
   end
 
   def find_local_event
-    render :text => EventPresenter.find_local_event
+    client.timeline.insert EventPresenter.find_local_event(client).to_h
+    render :text => true
   end
 
   def get_location
