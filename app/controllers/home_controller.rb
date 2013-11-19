@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def insert_event
-    client.timeline.insert EventPresenter.new(ACTV.event("ff3a74c9-db0c-4485-adfa-e7b9fd9d2b52")).to_h
+    client.timeline.insert EventPresenter.new(ACTV.event("068487f1-807f-4fcd-8561-53740f80f6b3")).to_h
     render :text => true
   end
 
