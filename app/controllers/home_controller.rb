@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def insert_event
-    client.timeline.insert Event.example_event
+    client.timeline.insert EventPresenter.new.to_h
     render :text => true
   end
 
