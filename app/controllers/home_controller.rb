@@ -29,4 +29,8 @@ class HomeController < ApplicationController
     Notification.destroy_all
     render :text => true
   end
+
+  def day_of_notification
+    
+  end
 end

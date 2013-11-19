@@ -45,6 +45,7 @@ class EventPresenter < Delegator
           "action" => "SHARE"
         },
         {
+          "id" => "#{assetGuid}",
           "action" => "CUSTOM",
           "values" => [
             {
