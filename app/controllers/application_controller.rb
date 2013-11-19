@@ -3,8 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def refresh_token
+    session[:refresh_token] ||= User.last.glass_refresh_token
+  end
+
   def token
-    @mirror_token ||= session[:token] || Mirror::Api::OAuth.new(ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], session[:refresh_token]).get_access_token
+    @mirror_token ||= session[:token] || Mirror::Api::OAuth.new(ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], refresh_token).get_access_token
   end
 
   def client
