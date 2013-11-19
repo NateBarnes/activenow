@@ -6,4 +6,5 @@ Activenow::Application.routes.draw do
    get 'insert_event' => 'home#insert_event'
    get 'get_location' => 'home#get_location'
    get 'find_local_event' => 'home#find_local_event'
+   get 'empty_notifications' => 'home#empty_notifications'
 end

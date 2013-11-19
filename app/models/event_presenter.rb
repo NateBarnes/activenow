@@ -27,6 +27,7 @@ class EventPresenter < Delegator
 
   def to_h
     {
+      "asset_id" => assetGuid,
       "text" => "Check out the #{assetName}! #{seo_url}",
       "html" => "<article>  <figure>    <img src=\"http://i.imgur.com/eoYDK9d.jpg\">  </figure>  <section> #{assetName} <br><br>#{formatted_date}<br></section></article>",
       "speakableType" => "Active Event",

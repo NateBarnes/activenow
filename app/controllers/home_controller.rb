@@ -24,4 +24,9 @@ class HomeController < ApplicationController
   def get_location
     render :text => client.locations
   end
+
+  def empty_notifications
+    Notification.destroy_all
+    render :text => true
+  end
 end
