@@ -1,6 +1,7 @@
 class EventPresenter < Delegator
   def self.find_local_event
-    ACTV.popular_events :lat_lon => "32.972428,-117.258067", :radius => 5, :start_date => "2013-11-19..2014-11-24", :exclude_children => "true", :onlineRegistration => "true"
+    results = ACTV.popular_events :lat_lon => "32.972428,-117.258067", :radius => 5, :start_date => "2013-11-19..2014-11-24", :exclude_children => "true", :onlineRegistration => "true"
+    results.results.first
   end
 
   def initialize event
