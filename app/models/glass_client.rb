@@ -14,4 +14,9 @@ class GlassClient
   def location
     locations.items.first
   end
+
+  private
+  def client
+    @client
+  end
 end
