@@ -7,7 +7,7 @@ class EventPresenter < Delegator
   end
 
   def self.find_event lat, lon
-    results = ACTV.popular_events :lat_lon => "#{lat},#{lon}", :radius => 5, :start_date => "#{search_formatter(DateTime.now)}..#{search_formatter(1.year.from_now)}", :exclude_children => "true", :onlineRegistration => "true"
+    results = ACTV.popular_events :lat_lon => "#{lat},#{lon}", :radius => 5, :start_date => "#{search_formatter(DateTime.now)}..#{search_formatter(2.weeks.from_now)}", :exclude_children => "true", :onlineRegistration => "true"
     new results.results.first
   end
 
