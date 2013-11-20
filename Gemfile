@@ -27,6 +27,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
 gem 'actv'
+gem 'mandrill-api'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

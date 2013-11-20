@@ -18,6 +18,10 @@ class GlassClient
     locations.items.first
   end
 
+  def subscribe
+    client.subscriptions.insert :collection => "timeline", :userToken => client.crendentials[:token], :operation => ["UPDATE"], :callbackUrl => "https://activenow.herokuap.com/callback"
+  end
+
   private
   def client
     @client
