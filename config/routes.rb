@@ -8,4 +8,5 @@ Activenow::Application.routes.draw do
    get 'find_local_event' => 'home#find_local_event'
    get 'empty_notifications' => 'home#empty_notifications'
    post 'callback' => 'home#callback'
+   get 'callback' => 'home#callback'
 end

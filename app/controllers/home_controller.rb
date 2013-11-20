@@ -51,5 +51,6 @@ class HomeController < ApplicationController
     }
 
     sending = m.messages.send message
+    render :text => true
   end
 end
