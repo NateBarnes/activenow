@@ -15,9 +15,10 @@ class EventPresenter < Delegator
     dt.strftime "%Y-%m-%d"
   end
 
-  def initialize event
+  def initialize event, user=User.last
     super
     @event = event
+    @user = user
   end
 
   def formatted_date str=self.start_date
@@ -45,7 +46,7 @@ class EventPresenter < Delegator
           "action" => "SHARE"
         },
         {
-          "id" => "#{assetGuid}",
+          "id" => "#{assetGuid}||#{@user.id}",
           "action" => "CUSTOM",
           "values" => [
             {
@@ -55,8 +56,7 @@ class EventPresenter < Delegator
           ]
         },
         {
-          "action" => "OPEN_URI",
-          "payload" => seo_url
+          "action" => "NAVIGATE"
         },
         {
           "action" => "TOGGLE_PINNED"
