@@ -37,17 +37,17 @@ class HomeController < ApplicationController
   def callback
     m = Mandrill::API.new
     message = {
-     :subject => "Hello from the Mandrill API",
-     :from_name => "Your name",
-     :text => "Hi message, how are you?",
+     :subject => "Complete Your Registration for the Event",
+     :from_name => "ActiveNow",
+     :text => "Hi #{User.last.name}, you asked us to help you register for the Event. Just follow this link and we'll help you finish getting setup!",
      :to => [
        {
          :email => User.last.email,
          :name => User.last.name
        }
      ],
-     :html => "<html><h1>Hi <strong>message</strong>, how are you?</h1></html>",
-     :from_email => "sender@yourdomain.com"
+     :html => "Hi #{User.last.name}, you asked us to help you register for the Event. Just click <a href='http://www.active.com'>here</a> and we'll help you finish getting setup!",
+     :from_email => "activenow@active.com"
     }
 
     sending = m.messages.send message
