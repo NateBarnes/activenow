@@ -16,7 +16,7 @@ class EventPresenter < Delegator
   end
 
   def initialize event, user=User.last
-    super
+    super event
     @event = event
     @user = user
   end
