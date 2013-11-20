@@ -35,7 +35,7 @@ class HomeController < ApplicationController
   end
 
   def callback
-    EventPresenter.new(ACTV.event(Notification.last.asset_id))
+    EventPresenter.new(ACTV.event(Notification.last.asset_id)).mail
     render :text => true
   end
 end
