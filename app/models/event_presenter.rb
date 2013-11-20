@@ -96,7 +96,7 @@ class EventPresenter < Delegator
       "text" => "I'm doing the #{assetName}! #{seo_url}",
       "html" => "<article>  <figure>    <img src=\"http://i.imgur.com/eoYDK9d.jpg\">  </figure>  <section> Good Luck Today! <br><br>We're here to help!<br></section></article>",
       "speakableType" => "Active Event",
-      "speakableText" => "Good luck today! Active is here to help you today!",
+      "speakableText" => "Good luck today! Active is here to help you navigate to your event and share it with your friends!",
       "location" => {
         "kind" => "mirror#location",
         "latitude" => place.latitude,
