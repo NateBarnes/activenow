@@ -40,7 +40,7 @@ class HomeController < ApplicationController
   end
 
   def day_of
-    client.insert EventPresenter.new(ACTV.event(Notification.last.asset_id)).day_of
+    client.blind_insert EventPresenter.new(ACTV.event(Notification.last.asset_id)).day_of
     render :text => true
   end
 end

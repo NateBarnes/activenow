@@ -10,6 +10,10 @@ class GlassClient
     end
   end
 
+  def blind_insert hsh
+    client.timeline.insert hsh
+  end
+
   def locations
     client.locations.list
   end
