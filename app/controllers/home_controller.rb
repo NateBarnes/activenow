@@ -35,22 +35,7 @@ class HomeController < ApplicationController
   end
 
   def callback
-    m = Mandrill::API.new
-    message = {
-     :subject => "Complete Your Registration for the Event",
-     :from_name => "ActiveNow",
-     :text => "Hi #{User.last.name}, you asked us to help you register for the Event. Just follow this link and we'll help you finish getting setup!",
-     :to => [
-       {
-         :email => User.last.email,
-         :name => User.last.name
-       }
-     ],
-     :html => "Hi #{User.last.name}, you asked us to help you register for the Event. Just click <a href='http://www.active.com'>here</a> and we'll help you finish getting setup!",
-     :from_email => "activenow@active.com"
-    }
-
-    sending = m.messages.send message
+    EventPresenter.new(ACTV.event(Notification.last.asset_id))
     render :text => true
   end
 end

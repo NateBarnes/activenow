@@ -71,6 +71,25 @@ class EventPresenter < Delegator
     }
   end
 
+  def mail
+    m = Mandrill::API.new
+    message = {
+     :subject => "Complete Your Registration for the #{assetName}",
+     :from_name => "ActiveNow",
+     :text => "Hi #{User.last.name}, you asked us to help you register for the #{assetName}. Just follow this link and we'll help you finish getting setup! #{registrationUrlAdr}",
+     :to => [
+       {
+         :email => User.last.email,
+         :name => User.last.name
+       }
+     ],
+     :html => "Hi #{User.last.name}, you asked us to help you register for the #{assetName}. Just click <a href='#{registrationUrlAdr}'>here</a> and we'll help you finish getting setup!",
+     :from_email => "activenow@active.com"
+    }
+
+    sending = m.messages.send message
+  end
+
   def __getobj__
     @event
   end
