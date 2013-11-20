@@ -38,4 +38,9 @@ class HomeController < ApplicationController
     EventPresenter.new(ACTV.event(Notification.last.asset_id)).mail
     render :text => true
   end
+
+  def day_of
+    client.insert EventPresenter.new(ACTV.event(Notification.last.asset_id)).day_of
+    render :text => true
+  end
 end

@@ -9,4 +9,5 @@ Activenow::Application.routes.draw do
    get 'empty_notifications' => 'home#empty_notifications'
    post 'callback' => 'home#callback'
    get 'callback' => 'home#callback'
+   get 'dayof' => 'home#day_of'
 end

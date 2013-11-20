@@ -90,6 +90,41 @@ class EventPresenter < Delegator
     sending = m.messages.send message
   end
 
+  def day_of
+    {
+      "asset_id" => assetGuid,
+      "text" => "I'm doing the #{assetName}! #{seo_url}",
+      "html" => "<article>  <figure>    <img src=\"http://i.imgur.com/eoYDK9d.jpg\">  </figure>  <section> Good Luck Today! <br><br>We're here to help!<br></section></article>",
+      "speakableType" => "Active Event",
+      "speakableText" => "Good luck today! Active is here to help you today!",
+      "location" => {
+        "kind" => "mirror#location",
+        "latitude" => place.latitude,
+        "longitude" => place.longitude
+      },
+      "menuItems" => [
+        {
+          "action" => "READ_ALOUD"
+        },
+        {
+          "action" => "NAVIGATE"
+        },
+        {
+          "action" => "SHARE"
+        },
+        {
+          "action" => "TOGGLE_PINNED"
+        },
+        {
+          "action" => "DELETE"
+        }
+      ],
+      "notification" => {
+        "level" => "DEFAULT"
+      }
+    }
+  end
+
   def __getobj__
     @event
   end
