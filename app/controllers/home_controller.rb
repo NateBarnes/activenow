@@ -1,9 +1,7 @@
 class HomeController < ApplicationController
-  def index
-  end
+  def index; end
 
-  def debug
-  end
+  def debug; end
 
   def insert_event
     client.insert EventPresenter.new(ACTV.event("068487f1-807f-4fcd-8561-53740f80f6b3")).to_h
@@ -30,9 +28,7 @@ class HomeController < ApplicationController
     render :text => true
   end
 
-  def day_of_notification
-
-  end
+  def day_of_notification; end
 
   def callback
     EventPresenter.new(ACTV.event(Notification.last.asset_id)).mail
